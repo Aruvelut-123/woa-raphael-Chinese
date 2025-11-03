@@ -1,41 +1,40 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
-[![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/woaraphael)
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## ⚠️ Warning
-We're not responsible for bricked devices, missing recovery partitions, dead xiaomi factoryline ~~workers~~ cowboys, dead microSD cards, dead pmics, dead ram, dead display ics, dead cpus, any xiaomi/poco shenanigans, dead cats or dogs, nuclear wars or you getting fired because you forgot to boot back into android for the alarm. We're also not responsible if Divan Vorvanin molests you.
+## ⚠️ 警告
+若出现设备变砖、恢复分区丢失、小米产线~~工人~~牛仔猝死、存储卡损坏、电源管理芯片烧毁、内存故障、显示芯片报废、CPU损毁、任何小米/POCO相关意外、宠物死亡、核战争爆发，或因忘记切换回安卓系统导致闹钟失灵而被开除等情况，我们概不负责。如果迪万·沃瓦宁（Divan Vorvanin）对您造成骚扰，我们将不承担任何责任。
 
-All the files here have been contributed by other users, here you will find a guide with the working files we managed to get. This is a delicate process, do it under your own risk and follow all the steps carefully.
+此处所有文件均由用户自发提供，您将找到附有可用资源的操作指南。此过程存在较高风险，请务必在操作前评估自身能力，严格遵循步骤说明，并自行承担一切后果。
 
-**IF YOU AREN'T COMFORTABLE MODDING YOUR PHONE OR ITS PARTITION TABLE OR YOU ARE PARANOID OF BRICKING YOUR DEVICE CLICK AWAY NOW!!! YOU HAVE BEEN WARNED, YOU ARE ON YOUR OWN IF YOU BRICK YOUR DEVICE!!! AGAIN! YOU HAVE BEEN WARNED!!!**
+**如果您对修改手机或分区表感到不安，或担心设备变砖，请立即关闭页面！您已被警告，若设备变砖，一切后果自负！再次提醒！您已被明确警告！！！**
 
-## Get started
-- [Project status](guide/status.md)
+## 开始
+- [项目状态](guide/status.md)
 
-- [Installation instructions](guide/installation-selection.md)
+- [安装指南](guide/installation-selection.md)
 
-- [Troubleshooting](guide/troubleshooting.md)
-
-
-## Miscellaneous
-- [Dualboot setup](guide/4-dualboot.md)
-
-- [Additional materials](guide/materials.md)
-
-- [Update drivers](guide/update-selection.md)
-
-- [Reinstall instructions](guide/reinstall-selection.md)
-
-- [Uninstall instructions](guide/uninstall.md)
+- [故障排除](guide/troubleshooting.md)
 
 
-## Maintainers
+## 杂项
+- [双系统设置](guide/4-dualboot.md)
+
+- [额外的材料](guide/materials.md)
+
+- [更新驱动](guide/update-selection.md)
+
+- [重装指南](guide/reinstall-selection.md)
+
+- [卸载指南](guide/uninstall.md)
+
+
+## 维护人员
 [<img alt="qaz6750" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/66907230?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/qaz6750)
 [<img alt="sunflower2333" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54024877?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/sunflower2333)
 
 
-## Contributors
+## 贡献者
 [<img alt="adomerlee" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/109386069?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/adomerlee)
 [<img alt="Morc" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13377926?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/TheMorc)
 [<img alt="map220v" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/14368485?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/map220v)
