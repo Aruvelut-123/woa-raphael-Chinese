@@ -30,18 +30,18 @@
 
 
 ## 设备可以进入 Android 但无法进入 bootloader
-> This is caused by having partitions with a name longer  than 16 characters, such as **Basic data partition**, which has 20 characters
-- Reboot to the modded recovery and in the built-in terminal run
+> 这是由于某个分区名称超过了 16 个字符导致的，例如 **Basic data partition**（基础数据分区）有 20 个字符
+- 重启到修改后的 TWRP 内并使用内置终端运行
 ```cmd
 parted /dev/block/sda
 ```
-- Run ```print``` to list all partitions
-- Look for partitions that are more than 16 characters long, for example "Basic Data Partition" and note their volume number
-- Rename this partition with ```name $ test```, replacing **$** with the partition number, and replacing **test** with the name you want the partition to have
-- Run ```quit```
-- Reboot to bootloader in the reboot menu to check if fastboot works again
+- 运行 ```print``` 来查看分区列表
+- 查看是否有分区名称超过了 16 个字符的分区，例如 "Basic Data Partition" 并记住它们的卷编号
+- 使用命令 ```name $ test``` 重命名分区，将 **$** 替换为卷编号，并将 **test** 替换为你想要的分区名
+- 运行 ```quit```
+- 在重启菜单中重启到 bootloader 来查看 fastboot 是否可用
 
-##### Done!
+##### 完成！
 
 
 
