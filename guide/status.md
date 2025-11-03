@@ -1,41 +1,41 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows 11
 
-## Project Status
-This project has reached its final stages. Small improvements may be made, but don't expect major improvements (such as working camera)
+## 项目状态
+该项目已进入最后阶段。可能会进行一些小的优化，但请不要对重大改进（例如相机功能修复）抱太高期望。
 
-#### Features
-- [x] Audio (Speakers)
-- [x] Audio (3.5mm)
-- [x] Battery status
-- [x] Bluetooth
-- [x] Brightness
-- [ ] Camera
-- [x] Charging ```VERY slow```
-- [x] Display
-- [ ] Flashlight
-- [x] GPU
-- [x] SMS & ```Does not work in 24H2```
-- [x] Touchscreen
-- [x] LTE ```SIM card must be in SIM1 slot``` & ```LTE does not work in 24H2```
-- [x] Microphone
-- [x] UFS
+#### 功能
+- [x] 音频 (扬声器)
+- [x] 音频 (3.5mm 耳机接口)
+- [x] 电池状态
+- [x] 蓝牙
+- [x] 亮度调节
+- [ ] 摄像头
+- [x] 充电 ```特别慢```
+- [x] 显示
+- [ ] 闪光灯
+- [x] 显卡
+- [x] 电话卡 & ```在 24H2 里不可用```
+- [x] 触摸屏
+- [x] 移动网络 ```电话卡必须插在一号卡槽``` & ```在 24H2里不可用```
+- [x] 麦克风
+- [x] 内部存储
 - [x] USB
 - [x] Wi-Fi
 
-#### Sensors
-- [x] Accelerometer
-- [ ] Fingerprint
-- [x] GPS
-- [ ] Gyroscope
-- [ ] Light sensor
-- [ ] Magnetometer
-- [ ] Proximity
+#### 传感器
+- [x] 加速度传感器
+- [ ] 指纹传感器
+- [x] GPS定位
+- [ ] 陀螺仪
+- [ ] 亮度传感器
+- [ ] 磁场传感器
+- [ ] 距离传感器
 
-#### Security
-- [ ] Security Processor ```Impossible to get working, Xiaomi broke the firmware```
-- [x] TPM (Software Backed)
+#### 安全
+- [ ] 安全芯片 ```无法使其工作，小米搞砸了固件```
+- [x] TPM (软件模拟)
 
 
 
