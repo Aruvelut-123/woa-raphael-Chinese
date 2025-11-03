@@ -1,23 +1,23 @@
 <img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## Troubleshooting Issues
-> Below you will find a list of common problems and their solutions
+## 故障排除
+> 下发你可以找到一些常见的问题及其解决方案
 
-## Cannot mount Windows in Android
-If mounting Windows produces an empty folder, you either don't have Windows installed, or your rom does not have mount support.
+## 无法在 Android 系统内挂载 Windows 分区
+如果挂载 Windows 产生了一个空文件夹，说明你要么没安装 Windows，要么是你的 rom 包不支持挂载分区。
 
-##### Done!
+##### 完成！
 
 
-## Cannot write to Windows in Android
-> This is caused by shutting down Windows instead of restarting it.
-- To solve this, boot to Windows and then press "restart", then as the screen shuts off boot to TWRP and from there load up Android.
-- Or, disable hibernation in Windows.
-> Alternatively, if you have already set up the Switch to Android app, simply use this to switch to Android.
+## 无法在 Android 里向 Windows 分区写入文件
+> 这是由于在 Windows 内选择了关机而不是重启。
+- 要解决这个问题，先启动到 Windows 内然后点击“重启”，当屏幕黑掉的那个时候启动到 TWRP 并从那里加载进入 Android。
+- 或关闭 Windows 的休眠功能。
+> 再或者，如果你已经在 Windows 里设置好了切换到 Android 的那个软件，只需使用它来进入 Android 即可。
 
-##### Done!
+##### 完成！
 
 
 ## Charging in Windows does not work
