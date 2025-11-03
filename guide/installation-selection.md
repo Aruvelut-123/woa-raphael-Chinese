@@ -1,6 +1,6 @@
 # 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## 安装部分
+## 安装指南
 这里有两种安装 Windows 的方法。请在下方选择你想要使用的其中一种。
 
 | **手动安装 Windows** | **使用自动化脚本安装 Windows** 
