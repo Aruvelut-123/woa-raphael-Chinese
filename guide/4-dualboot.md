@@ -1,21 +1,21 @@
 <img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## Dualbooting Android and Windows seamlessly
+## 实现 Android 和 Windows 无缝双系统启动
 
-### Prerequisites
-- [UEFI image](https://github.com/new-WoA-Raphael/woa-raphael/releases/tag/UEFI)
+### 需要准备的文件
+- [UEFI 镜像](https://github.com/new-WoA-Raphael/woa-raphael/releases/tag/UEFI)
 
-- [WOA Helper app](https://github.com/n00b69/woa-helper/releases/tag/APK)
+- [WOA 助手 app](https://github.com/n00b69/woa-helper/releases/tag/APK)
 
-## Setting up the dualboot app
-> This guide assumes you are rooted, if you aren't, please follow [this guide](root.md) first.
+## 设置双系统启动软件
+> 这个指南默认认为你已经取得了 root 权限，如果你还没有 root，请先遵循[这个指南](root.md)。
 
-### Setup - Android
-- Download and install the **WOA Helper** app, then open it and grant it root access.
-- Download the **UEFI image** and place it inside the folder named `UEFI` in your internal storage.
-- Open the WOA Helper app and use the **STA CREATOR** in **WOA TOOLBOX**.
+### 设置 - Android 端
+- 下载并安装 **WOA 助手** app，然后打开它并授予其 root 权限。
+- 下载 **UEFI 镜像**并将其放在你的内部存储中一个名为 `UEFI` 的文件夹。
+- 打开 WOA 助手并点击**WOA 工具箱**，然后在弹出的页面中点击**STA CREATOR**。
 > [!Important]
 > If `/sdcard/Windows` is empty, your rom does not support mounting and you will have to make a boot.img backup inside the app, then copy it manually to Windows once you boot to it (for example by uploading it somewhere and then downloading it while booted into Windows). The same applies to the StA files, which are also generated in your internal storage.
 >
