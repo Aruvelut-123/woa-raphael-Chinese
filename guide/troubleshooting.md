@@ -20,16 +20,16 @@
 ##### 完成！
 
 
-## Charging in Windows does not work
-> [!WARNING]
-> Do not use a powered USB hub with host mode enabled, this can potentially break your device. If you use a powered USB hub, please use the [disable USB host mode guide](/guide/English/Additional-materials-en.md#Disabling-USB-host-mode)
+## Windows 内无法充电
+> [!警告]
+> 不要在启用了主机模式后使用带供电的 USB 拓展坞，这可能会损坏你的设备。如果你正在使用带有供电的 USB 拓展坞，请查看 [如何关闭 USB 主机模式](/guide/English/Additional-materials-en.md#Disabling-USB-host-mode)
 
-Charging in Windows only works on specific cables. Cables that have been known to work are the original Poco X3 Pro cable (identified by the additional orange/red pin in the USB-A port), and the Nimaso 100W USB-C to USB-C fast charging cable.
+在 Windows 中充电只对特定线缆可用。例如 Poco X3 Pro 原装的充电线 (通过查看 USB-A 口中的橙/红色针脚来识别)，和 Nimaso 100W USB-C to USB-C 快充线。
 
-##### Done!
+##### 完成！
 
 
-## Device can boot into Android but not bootloader
+## 设备可以进入 Android 但无法进入 bootloader
 > This is caused by having partitions with a name longer  than 16 characters, such as **Basic data partition**, which has 20 characters
 - Reboot to the modded recovery and in the built-in terminal run
 ```cmd
