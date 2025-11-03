@@ -21,7 +21,7 @@
 
 
 ## Windows 内无法充电
-> [!警告]
+> [!Warning]
 > 不要在启用了主机模式后使用带供电的 USB 拓展坞，这可能会损坏你的设备。如果你正在使用带有供电的 USB 拓展坞，请查看 [如何关闭 USB 主机模式](/guide/English/Additional-materials-en.md#Disabling-USB-host-mode)
 
 在 Windows 中充电只对特定线缆可用。例如 Poco X3 Pro 原装的充电线 (通过查看 USB-A 口中的橙/红色针脚来识别)，和 Nimaso 100W USB-C to USB-C 快充线。
