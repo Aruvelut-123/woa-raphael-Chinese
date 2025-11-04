@@ -5,7 +5,7 @@
 
 | **手动安装 Windows** | **使用自动化脚本安装 Windows** 
 |------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------
-| <a href="1-partition.md"><img src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/guide/zmanual.png" width="80"></a> | <a href="nopc.md"><img src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/guide/znopc.png" width="80"></a>
+| <a href="1-partition.md"><img src="zmanual.png" width="80"></a> | <a href="nopc.md"><img src="znopc.png" width="80"></a>
 | - 对于没有经验的人来说很复杂 | - 简单且快捷
 | - 需要了解基础的 ADB 命令等 | - 什么都不需要学
 | - 在操作系统版本、语言、版本类型和存储分配方面高度可定制 | - 在操作系统版本、语言、版本类型和存储分配方面高度可定制

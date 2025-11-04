@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="../media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
 
 # Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
 

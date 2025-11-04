@@ -1,95 +1,102 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="../media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## Installing Windows without a PC
+## 不使用电脑安装 Windows
 
-### Prerequisites
-- A rooted Xiaomi Mi 9T Pro / Redmi K20 Pro
+### 需要的工具
+- 一个已经获取了 root 权限的 Xiaomi Mi 9T Pro / Redmi K20 Pro
 
-- [Modified TWRP](https://github.com/new-WoA-Raphael/woa-raphael/releases/download/Files/modded-twrp-raphael.img)
+- [修改版 TWRP](https://github.com/new-WoA-Raphael/woa-raphael/releases/download/Files/modded-twrp-raphael.img)
 
 - [Raphael WinInstaller](https://github.com/new-WoA-Raphael/woa-raphael/releases/download/Files/RaphaelWinInstaller.zip)
 
-- [Windows on ARM image](https://arkt-7.github.io/woawin/)
+- [WoA 镜像](https://arkt-7.github.io/woawin/)
 
-- [WOA Helper app](https://github.com/n00b69/woa-helper/releases/tag/APK)
+- [WOA 助手](https://github.com/n00b69/woa-helper/releases/tag/APK)
 
-- Optional: a USB stick
+- 可选: 一个 U 盘
 
-### Notes
+### 注意
 > [!WARNING]  
-> All your data will be erased! Back up now if needed.
+> 所有的数据都将被清除！如果需要的话请立即备份。
 > 
-> DO NOT REBOOT YOUR PHONE if you think you made a mistake, ask for help in the [Telegram chat](https://t.me/woaraphael).
+> **不要重启你的手机！**如果你认为你做错了某一步，请前往 [Telegram 聊天](t.me/woaraphael)来寻求帮助。
 
 > [!Important]
-> This guide assumes you have already unlocked your bootloader and are already rooted, if this is not the case, you'll still need a PC to do that.
+> 此教程假定了你已经有一台解了 BL 锁并取得了 root 权限的手机，如果你没有，则你还是需要一台电脑来完成。
 
-### Flash the modified TWRP
-> If you have a custom recovery installed, you can install the modified TWRP through there instead
-- Download the modified TWRP, rename it to **TWRP.img**, and leave in the `Download` folder **of your internal storage**.
-- Download **Termux**, open it, and grant it root access.
-- Run the below command in Termux to flash TWRP:
+### 输入修改版 TWRP
+> 如果你已经安装过一个自定义的 recovery，你可以用其安装修改版 TWRP
+- 下载修改版 TWRP，将其重命名为 **TWRP.img**并存在**内部存储**的 `Download` 文件夹内。
+- 下载 **Termux**，打开它并授予其 root 权限。
+- 在 Termux 内运行以下命令刷入 TWRP:
 ```cmd
 su -c dd if=/sdcard/Download/TWRP.img of=/dev/block/by-name/recovery
 ```
-- Run the below command in Termux to reboot into TWRP:
+- 在 Termux 内运行以下命令来重启到 TWRP:
 ```cmd
 su -c reboot recovery
 ```
+> 如果你刷入并重启后卡在了 fastboot 页面，请使用另一台手机对其刷入正确的 recovery 镜像，进入系统后备份当前的 boot 镜像并存放到另一台手机或 U 盘上，然后使用以下命令刷入修改版 TWRP
+```cmd
+su -c dd if=/sdcard/Download/TWRP.img of=/dev/block/by-name/boot
+```
+```cmd
+su -c reboot
+```
 
-### Checking if decryption works
-- Once TWRP boots, enter your password if it asks you to.
-- Open the file explorer in TWRP, then navigate to your internal storage.
-> If your files are not there and your internal storage is displayed as **(0MB)**, there will be some additional steps which will be explained later in this guide.
+### 查看 data 解密是否正常
+- TWRP 启动后，如果要求输入锁屏密码，则输入进去。
+- 打开 TWRP 内的文件管理器，然后导航到你的内部存储。
+> 如果你的文件都不见了且你的内部存储显示为 **(0MB)**，则会有一些额外步骤需要执行，具体将会稍后解释。
 
-#### Opening TWRP terminal
-- Press the **Advanced** button on the bottom right of the screen, then press **Terminal**.
+#### 打开 TWRP 终端
+- 点击屏幕右下角的**高级**按钮，然后点击**终端**。
 
-### Run the partitioning script
-> Replace **$** with the amount of storage you want Windows to have (do not add GB, just write the number)
+### 运行分区脚本
+> 将 **$** 替换为你想要 Windows 可使用的容量大小 (不需要在结尾加上 GB，输入数值就行)
 > 
-> If it asks you to run it once again, do so
+> 如果它要求你再运行一次，照做即可。
 ```cmd
 partition $
 ``` 
 
-### Check if Android still starts
-- Just restart the phone, and see if Android still works
+### 检查安卓是否还能正常运行
+- 重启你的手机并查看安卓是否还能正常工作
 
-### Preparing necessary files
-- Download the Windows image and make sure it remains in the `Download` folder of your **internal storage**.
+### 准备需要的文件
+- 将 Windows 镜像下载并保存到**内部存储**的 `Download` 文件夹内。
 > [!Important]
-> For performance reasons, it is recommended to use Windows 11 24H2 (builds that start with 261XX, such as 26100.2454)
+> 由于性能原因，推荐使用 Windows 11 24H2 及以上 (版本号为 261XX 的，例如 26100.2454)
 
-> If TWRP is not able to read/decrypt your internal storage, create a folder on your **USB stick** named `WOA` and put the **.esd** file in there
+> 如果 TWRP 无法读/写你的内部存储，则在 **U 盘**上创建一个叫做 `WOA` 的文件夹并将 **.esd** 文件放在那里
 >
-> Alternatively, find another TWRP image online that can actually decrypt and use it instead
-- Download **WinInstaller.zip** and keep it in the `Download` folder as well.
-- Download and install the [WOA Helper app](https://github.com/new-WoA-Raphael/woa-helper/releases/tag/APK), then open it and grant it root access. Do not do anything else inside the app yet.
+> 或者，在网上再找一个可以解密你的 data 分区的 TWRP 镜像并使用
+- 下载 **WinInstaller.zip** 并也将其放置在 `Download` 文件夹内。
+- 下载并安装 [WOA 助手](https://github.com/new-WoA-Raphael/woa-helper/releases/tag/APK)，打开它并授予其 root 权限。先别碰软件里的任何东西。
 
-#### Booting into TWRP
-- Press the `Reboot to Recovery` button in the top right of Magisk.
-- Once booted into TWRP, enter your password if it asks you to.
+#### 进入 TWRP
+- 点击你的 root 管理器的右上角的`重启到 Recovery` 按钮。
+- 进入 TWRP 后，按需输入锁屏密码。
 
-### Flashing WinInstaller
-- In TWRP, select **Install** and then locate **WinInstaller.zip** and flash it.
-- Once you're given the option to reboot, do so.
+### 刷入 WinInstaller
+- 在 TWRP 里，点击**安装**然后找到 **WinInstaller.zip** 并刷入。
+- 当你可以重启后，点击重启。
 > [!Note]
-> Wait until all processes complete and your device boots into Windows. This will take around 15-20 minutes.
+> 等待所有过程完成后你的设备会进入 Windows。一般需要大概 15-20 分钟。
 
 > [!Tip]
-> If you wish to skip the Microsoft Account login, press the **I don't have internet** button in the WiFi page, then when prompted, press the **Continue with limited setup** button.
+> 如果你想要跳过微软账号登录，在连接 WiFi 的页面点击**我没有互联网连接**，然后点击**继续使用有限的体验**按钮。
 
-#### Booting to Android
-- Run the **Android** shortcut on your desktop (you can also pin it to your start menu / taskbar for ease of access).
+#### 进入 Android
+- 运行桌面上的 **Android** 快捷方式 (你也可以把它固定到开始菜单/任务栏来更方便的访问)。
 
-#### Booting to Windows
-> If it says "UEFI NOT FOUND", download the [UEFI image](https://github.com/new-WoA-Raphael/woa-raphael/releases/tag/UEFI) and place it in the `UEFI` folder in your internal storage.
-- Press **QUICKBOOT TO WINDOWS** inside the WOA Helper app, or use the newly created toggle in your quick settings panel.
+#### 进入 Windows
+> 如果提示 "未找到 UEFI"，则下载 [UEFI 镜像](https://github.com/new-WoA-Raphael/woa-raphael/releases/tag/UEFI)并将其放置到内部存储中的 `UEFI` 文件夹内。
+- 点击 WOA 助手中的**快速启动到 WINDOWS** 按钮或使用在快速设置面板里新添加的按钮。
 
-## Finished!
+## 完成！
 
 
 

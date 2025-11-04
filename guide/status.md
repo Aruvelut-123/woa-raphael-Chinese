@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
+<img align="right" src="../media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
 # 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows 11
 

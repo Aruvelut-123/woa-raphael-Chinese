@@ -1,140 +1,145 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="../media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## Partitioning your device
+## 给你的设备分区
 
-### Prerequisites
-- A functioning brain (most important of all)
+### 需要的东西
+- 一个正常工作的大脑 (特别重要)
   
-- Unlocked bootloader
+- 已解锁的 BL 锁
   
-- Preferably the latest firmware installed
+- 最好安装了最新版的固件
   
-- [ADB & Fastboot](https://developer.android.com/studio/releases/platform-tools)
+- [ADB 和 Fastboot 工具](https://developer.android.cn/studio/releases/platform-tools)
   
-- [Modified TWRP](https://github.com/new-WoA-Raphael/woa-raphael/releases/download/Files/modded-twrp-raphael.img)
+- [修改版 TWRP](https://gh.llkk.cc/https://github.com/new-WoA-Raphael/woa-raphael/releases/download/Files/modded-twrp-raphael.img)
 
-### Notes
+### 注意
 > [!WARNING]  
-> All your data will be erased! Back up now if needed.
+> 所有的数据都将被清除！如果需要的话请立即备份。
 > 
-> Do not run the same command twice.
+> 不要多次运行同一个命令。
 > 
-> DO NOT REBOOT YOUR PHONE if you think you made a mistake, ask for help in the [Telegram chat](t.me/woaraphael).
+> **不要重启你的手机！**如果你认为你做错了某一步，请前往 [Telegram 聊天](t.me/woaraphael)来寻求帮助。
 > 
-> Do not run all commands at once, execute them in order!
+> 不要一次执行所有指令，按顺序执行它们！
 
 > [!IMPORTANT]
-> Make sure you use the MODDED Recovery throughout this whole tutorial as we provide tools to help aid this installation process and make it as easy as possible for you.
+> 确保在整个教程的过程中都使用修改版的 TWRP，因为我们在其中内置了一些工具能让安装过程更轻松一些。
 > 
-> If you don't use it and you face any errors, consider it your fault and consider yourself alone if you try asking for support as you have deferred from the main guide.
+> 如果你没有使用它并遇到了任何错误，请将其认定为你自己的错误并由于会被认为脱离了主教程则需自行解决。
 
-### Opening CMD as an admin
-> Download **platform-tools** and extract the folder somewhere, then open CMD as an **administrator**.
+### 以管理员身份运行命令提示符
+> 下载 **platform-tools** 并解压到某处，然后以**管理员**身份打开命令提示符。
 >
-> It is recommended to keep this window open and use it throughout the entire guide.
+> 推荐保持这个窗口打开并在整个教程的过程中使用同一个命令行窗口。
 > 
-> Replace `path\to\platform-tools` with the actual path to the platform-tools folder, for example **C:\platform-tools**.
+> 将 `path\to\platform-tools` 替换为你将其解压到的路径，例如 **C:\platform-tools**.
 ```cmd
 cd path\to\platform-tools
 ```
 
-### Boot into the modified TWRP
-> While in fastboot mode, replace `path\to\modded-twrp-raphael.img` with the actual path of the image
+### 启动到修改版 TWRP
+> 在 fastboot 模式下，将 `path\to\modded-twrp-raphael.img` 替换为镜像所在的真实路径
+> 
+> 如果你无法访问 fastboot 模式的话，这里有一个临时的解决方法（但需要有自定义 recovery 提前安装）。你可以将当前的 boot 分区备份到电脑上，然后将修改版 TWRP 刷入 boot 分区并重启即可，后续恢复只需将备份的 boot 分区镜像刷入即可。
 ```cmd
 fastboot boot path\to\modded-twrp-raphael.img
 ```
 
-#### Backing up your boot image
-> This will back up your boot image in the current directory (which should be the **platform-tools** folder)
+#### 备份你的 boot 镜像
+> 如果你无法访问 fastboot 模式并按照了临时的解决方法，则你可以跳过这一步。
+> 
+> 这将会把你的 boot 分区镜像备份到当前目录 (也就是 **platform-tools** 文件夹)
 >
-> Replug the cable if it says "no devices/emulators found"
+> 如果提示 "no devices/emulators found" 则重新插拔线缆并重试
 ```cmd
 adb pull /dev/block/by-name/boot boot.img
 ```
 
-### Partitioning your device
-> There are two methods to partition your device. Please select the method you would like to use below. 
+### 给你的设备分区
+> 目前有两种方法来给你的设备分区。请在下方选择一种你喜欢的方法。
 
-#### Method 1: Manual partitioning 
+#### 方法 1: 手动分区 
 
 <details>
-  <summary><strong>Click here for method 1</strong></summary> 
+  <summary><strong>点击此处查看方法 1</strong></summary> 
 
-#### Opening a shell
+#### 打开一个 adb 终端
 ```cmd
 adb shell
 ```
 
-#### Resizing the partition table
+#### 重新设置分区表大小
 ```cmd
-adb shell sgdisk --resize-table 64 /dev/block/sda
+sgdisk --resize-table 64 /dev/block/sda
 ```
 
-### Preparing for partitioning
-$${\color{lightblue}🟦 Note}$$
-> If at any moment in parted you see an error prompting you to type "Yes/No" or "Ignore/Cancel", type `Yes` or `Ignore` depending on the situation to ignore the errors and continue.
+### 准备分区
+$${\color{lightblue}🟦 注意}$$
+> 如果在任何时候你从 Parted 中看到了一个错误提示并让你选择 "Yes/No" 或 "Ignore/Cancel"，请根据情况输入 `Yes` 或 `Ignore` 来忽略错误并继续。
 >
-> If you see any **udevadm** errors, you can ignore these as well.
+> 如果你看到了任何带有 **udevadm** 的错误，那么你也可以忽略掉那些。
 ```cmd
 parted /dev/block/sda
 ```
 
-#### Printing the current partition table
-> Parted will print the list of partitions, userdata should be the last partition in the list
+#### 查看当前的分区表
+> 执行此指令后 Parted 会输出当前的分区表，userdata 分区则应该在分区表的最后
 ```cmd
 print
 ``` 
 
-#### Removing userdata
-> Replace **$** with the number of the **userdata** partition, which should be **31**
+#### 删除 userdata 分区
+> 将 **$** 替换为 **userdata** 分区的索引，一般是 **31**
 ```cmd
 rm $
 ``` 
 
-#### Recreating userdata
-> Replace **2080MB** with the former start value of **userdata** which we just deleted
+#### 重新创建 userdata 分区
+> 将 **2080MB** 替换为刚刚删除的 **userdata** 分区的扇区初始值
 >
-> Replace **64GB** with the end value you want **userdata** to have. In this example your available usable space in Android will be 64GB-2080MB = **62GB**
+> 将 **64GB** 替换为你想要的 **userdata** 分区的扇区结束值。在这个例子中安卓的可用空间将为 64GB-2080MB = **62GB**
 ```cmd
 mkpart userdata ext4 2080MB 64GB
 ``` 
 
-#### Creating ESP partition
-> Replace **64GB** with the end value of **userdata**
+#### 创建 ESP 分区
+> 将 **64GB** 替换为刚刚创建的 **userdata** 分区的扇区结束值
 >
-> Replace **64.3GB** with the value you used before, adding **0.3GB** to it
+> 将 **64.3GB** 替换为上一个参数加 **0.3GB** 的值
 ```cmd
 mkpart esp fat32 64GB 64.3GB
 ``` 
 
-#### Creating Windows partition
-> Replace **64.3GB** with the end value of **esp**
+#### 创建 Windows 分区
+> 将 **64.3GB** 替换为 **esp** 分区的扇区结束值
 ```cmd
 mkpart win ntfs 64.3GB -0MB
 ``` 
 
-#### Making ESP bootable
-> Use `print` to see all partitions. Replace "$" with your ESP partition number, which should be **32**
+#### 将 ESP 分区设置为可引导
+> 使用 `print` 命令查看分区表。将 "$" 替换为 ESP 分区的索引，一般是 **32**
 ```cmd
 set $ esp on
 ``` 
 
-#### Exit parted
+#### 退出 parted
 ```cmd
 quit
 ``` 
 
-### Formatting data
-- Format all data in TWRP, or Android will not boot.
-- ( Go to Wipe > Format data > type yes ) 
+### 格式化 data 分区
+- 在 TWRP 里格式化 data 分区，否则安卓系统不会启动。
+- ( 前往擦除 > 格式化 data 分区 > 输入 yes ) 
 
-#### Check if Android still starts
-- Just restart the phone, and see if Android still works 
+#### 检查安卓系统是否能正常启动
+- 重启你的手机并查看安卓系统是否还能工作
+- 如果你使用的是上面提到的临时解决方案，则将备份的 boot 分区镜像用 TWRP 刷入到 boot 分区并重启即可
 
-### Formatting Windows and ESP drives
-> Reboot into the modded recovery, then run the below two commands
+### 格式化 Windows 和 ESP 分区
+> 重新回到修改版 TWRP，然后运行下面两条命令
 ```cmd
 adb shell mkfs.ntfs -f /dev/block/by-name/win -L WINRAPHAEL
 ``` 
@@ -143,36 +148,37 @@ adb shell mkfs.ntfs -f /dev/block/by-name/win -L WINRAPHAEL
 adb shell mkfs.fat -F32 -s1 /dev/block/by-name/esp -n ESPRAPHAEL
 ``` 
 
-### Fixing the GPT
-> If you do not do this, Windows may break your device
+### 修复 GPT 分区表
+> 如果你不这么做，Windows 可能会损坏你的设备
 ```cmd
 adb shell fixgpt
 ```
 
 </details>
 
-#### Method 2: Automatic partitioning 
+#### 方法 2: 自动分区
 
 <details>
-  <summary><strong>Click here for method 2</strong></summary> 
+  <summary><strong>点击此处查看方法 2</strong></summary> 
 
 > [!Important]
-> If your device is using dynamic partitions for newer roms, DO NOT USE THE PARTITION SCRIPT and instead use **Method 1: Manual partitioning**.
+> 如果你的设备使用动态分区或更新的 rom，**不要使用自动分区脚本！**请使用**方法 1: 手动分区**。
 
-### Run the partitioning script
-> Replace **$** with the amount of storage you want Windows to have (do not add GB, just write the number)
+### 运行分区脚本
+> 将 **$** 替换为你想要 Windows 所拥有的空间大小 (不需要在结尾加上 GB，直接填写数字即可)
 > 
-> If it asks you to run it once again, do so
+> 如果它要求你再运行一次，照做即可
 ```cmd
 adb shell partition $
 ``` 
 
-### Check if Android still starts
-- Just restart the phone, and see if Android still works 
+### 检查安卓系统是否能正常启动
+- 重启你的手机并查看安卓系统是否还能工作
+- 如果你使用的是上面提到的临时解决方案，则将备份的 boot 分区镜像用 TWRP 刷入到 boot 分区并重启即可
 
 </details>
 
-## [Next step: Rooting your phone](/guide/2-root.md)
+## [下一步: 获取 Root 权限](/guide/2-root.md)
 
 
 

@@ -1,67 +1,67 @@
-<img align="right" src="https://github.com/new-WoA-Raphael/woa-raphael/blob/main/media/raphaelbutnotass.png" width="350" alt="Windows 11 running on a Redmi K20 Pro">
+<img align="right" src="../media/raphaelbutnotass.png" width="350" alt="运行在 Redmi K20 Pro 上的 Windows 11">
 
-# Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
+# 在 Xiaomi Mi 9T Pro / Redmi K20 Pro 上运行 Windows
 
-## Additional materials
-> Below you will find a list of tweaks and materials for Windows on your ARM device
-
-
-### List of supported apps/games
-> These are by no means comprehensive lists, they do however list apps/games that have been tested by the community
-
-- [Renegade Google Sheets list](https://docs.google.com/spreadsheets/d/1XYuoySgYQE0HL573sA-0RGMX7I4lt5rWJuQ8Z8yRJNY/edit?usp=drivesdk)
-
-- [ARM Repo (native ARM software)](https://armrepo.ver.lt/)
-
-- [News & supported applications](https://windowsonarm.org/)
-
-#### Finished!
+## 额外材料
+> 在下方你能找到一个包含 WoA 中的调整和额外材料的列表
 
 
-### Toggling USB host mode
+### 支持的软件/游戏列表
+> 这些绝非详尽无遗的清单，不过它们确实列出了社区已测试过的应用程序/游戏。
+
+- [Renegade 谷歌表格](https://docs.google.com/spreadsheets/d/1XYuoySgYQE0HL573sA-0RGMX7I4lt5rWJuQ8Z8yRJNY/edit?usp=drivesdk)
+
+- [ARM 仓库 (原生 ARM 软件)](https://armrepo.ver.lt/)
+
+- [新闻和支持的软件列表](https://windowsonarm.org/)
+
+#### 完成！
+
+
+### 切换 USB 主机模式
 > [!Warning]
-> Disable USB host mode if you use a powered USB hub, as this can irreversibly damage your device. If you don't use a powered USB hub, enable USB host mode or you will not be able to use any USB devices.
+> 如果你正在使用带有独立供电的 USB 拓展坞，请关闭 USB 主机模式，因为这会对您的设备造成不可逆转的损坏。如果你没有在使用带有独立供电的 USB 拓展坞，启用 USB 主机模式否则你将无法使用任何 USB 设备。
 
-- Run [USB Host Control](https://github.com/Misha803/My-Scripts/releases/tag/USB-Host-Mode-Control) to enable/disable USB host mode, then confirm that you want to disable/enable USB host mode.
-- If USB host mode is currently enabled and USB does not work, turn it off, then back on.
+- 运行 [USB 主机模式控制](https://github.com/Misha803/My-Scripts/releases/tag/USB-Host-Mode-Control) 来启用/禁用 USB 主机模式，然后确认你真的想禁用/启用 USB 主机模式。
+- 如果 USB 主机模式已经启用了但 USB 设备无法正常工作，将其关闭后再打开即可。
 
-#### Finished!
+#### 完成！
 
 
-### Set up Android boot.img auto-flashing
+### 设置自动刷入安卓的 boot.img
 > [!NOTE]
-> Set up Android boot.img auto-flashing on Windows boot or when the battery is low (<15%) to prevent the battery from dying with UEFI flashed. 
+> 设置在启动 Windows 后自动刷入安卓的 boot.img 或当电量不足 (<15%) 的时候自动刷入来防止在 UEFI 刷入的情况下电量耗尽。 
 
-- Download the **boot.img auto-flasher** [here](https://github.com/Misha803/My-Scripts/releases/tag/boot.img-Auto-Flasher).
-- Run it, click **INSTALL** button, select when the Android boot.img should be auto-flashed (on Windows boot/Low battery) and wait for the installation to complete.
-- To uninstall the auto-flasher, open the **boot.img auto-flasher** again and click on **UNINSTALL**.
+- 下载 **boot.img 自动刷入工具** [here](https://github.com/Misha803/My-Scripts/releases/tag/boot.img-Auto-Flasher).
+- 运行并点击 **INSTALL** 按钮，选择你想要何时自动刷入安卓的 boot 镜像 (Windows 启动/低电量时) 并等待安装完成。
+- 要卸载自动刷入工具，再次打开 **boot.img 自动刷入工具** 并点击 **UNINSTALL**。
 
-#### Finished! 
-
-
-### Install Microsoft Office
-- Go to [Gravesoft's Office installer page](https://gravesoft.dev/office_c2r_links).
-- Download the installer that fits your purposes. Make sure you select `Online x64`.
-- Open the `setup.exe` and follow any instructions provided within.
-
-#### Finished!
+#### 完成！
 
 
-### Activate Windows / Office
-- Follow the instructions by Massgravel [here](https://github.com/massgravel/Microsoft-Activation-Scripts)
+### 安装 Microsoft Office
+- 前往 [Gravesoft 的 Office 安装程序页面](https://gravesoft.dev/office_c2r_links).
+- 下载符合你的需求的安装程序。确保选择的是 `Online x64`。
+- 打开 `setup.exe` 并按照其提示操作。
 
-#### Finished!
+#### 完成！
 
 
-### Making the keyboard float
+### 激活 Windows / Office
+- 使用 Massgravel 制作的[工具](https://github.com/massgravel/Microsoft-Activation-Scripts)
+
+#### 完成！
+
+
+### 让键盘浮起
 > [!WARNING]  
-> Make sure these steps are done on the device running Windows, not your computer!
+> 确保在运行 Windows 的设备上执行这些步骤，而不是你自己的电脑！
 
-- Open CMD as an administrator and run ```reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Scaling /v MonitorSize```
-- Press `y` then enter.
-- Reboot your device.
+- 以管理员身份打开命令提示符并运行 ```reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Scaling /v MonitorSize```
+- 输入 `y` 后回车。
+- 重启你的设备。
 
-##### Finished!
+##### 完成！
 
 
 
