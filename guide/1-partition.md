@@ -48,10 +48,13 @@ cd path\to\platform-tools
 fastboot boot path\to\modded-twrp-raphael.img
 ```
 
-#### 备份你的 boot 镜像
-> 如果你无法访问 fastboot 模式并按照了临时的解决方法，则你可以跳过这一步。
-> 
-> 这将会把你的 boot 分区镜像备份到当前目录 (也就是 **platform-tools** 文件夹)
+> [!Important]
+> If you get a black screen, try running the commands while on this black screen, as they may still work. If they don't, flash official stock MIUI and try again.
+>
+> If the recovery still refuses to boot or you don't want to switch ROMs, follow [this guide](/guide/1-altpartition.md) instead.
+
+#### Backing up your boot image
+> This will back up your boot image in the current directory (which should be the **platform-tools** folder)
 >
 > 如果提示 "no devices/emulators found" 则重新插拔线缆并重试
 ```cmd
