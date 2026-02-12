@@ -2,7 +2,7 @@
 
 # Running Windows on the Xiaomi Mi 9T Pro / Redmi K20 Pro
 
-## Rooting your device
+## 为你的设备获取 Root 权限
 
 ### Prerequisites
 - [Magisk](https://github.com/topjohnwu/Magisk/releases/latest)
